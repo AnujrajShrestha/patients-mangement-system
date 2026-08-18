@@ -1,11 +1,20 @@
 from fastapi import FastAPI,HTTPException,Query
 from fastapi.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
 from pathlib import Path
 from pydantic import BaseModel,Field,computed_field
 from typing import Literal,Annotated,Optional
 import json
 
 app= FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 class Patient(BaseModel):
     id: Annotated[str, Field(...,description='ID of the patient',examples=['P001'])]
@@ -38,7 +47,7 @@ class PatientUpdate(BaseModel):
     name: Annotated[Optional[str], Field(default=None)]
     city: Annotated[Optional[str], Field(default=None)]
     age: Annotated[Optional[int], Field(default=None, gt=0)]
-    gender: Annotated[Optional[Literal['male', 'female']], Field(default=None)]
+    gender: Annotated[Optional[Literal['male', 'female','others']], Field(default=None)]
     height: Annotated[Optional[float], Field(default=None, gt=0)]
     weight: Annotated[Optional[float], Field(default=None, gt=0)]
 
