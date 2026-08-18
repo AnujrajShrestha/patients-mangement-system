@@ -48,5 +48,15 @@
         "weight": 75,
         "bmi": 31.22,
         "verdict": "Obese"
+    },
+    "P006": {
+        "name": "Anuj",
+        "city": "Butwal",
+        "age": 19,
+        "gender": "male",
+        "height": 1.6,
+        "weight": 61.0,
+        "bmi": 23.83,
+        "verdict": "Normal"
     }
 }
