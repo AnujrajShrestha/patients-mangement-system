@@ -886,5 +886,5 @@ If you plan to adapt this project for real healthcare use, review and implement 
 
 ---
 
-**Built with ❤️ using Python, FastAPI, React, Vite, and Tailwind CSS.**
+**Built with ❤️ using Python, FastAPI, React, Vite, and Tailwind CSS!**
 
